@@ -1,0 +1,19 @@
+/* import sources */
+@import '~@flaticon/flaticon-uicons/css/all/all';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #100c1f;
+  --primary: #3f17fa;
+  --primary-foreground: #f4f7ff;
+  --border: #f1eff7;
+}
+
+/* preset */
+.fi {
+  @apply flex justify-center items-center;
+}
