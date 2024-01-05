@@ -14,18 +14,18 @@ import ContactSection from './contact-section'
 import ActionToast from './action-toast'
 
 export const metadata: Metadata = {
-  title: 'Unlimited Web Design Agency | Sonibble',
+  title: 'Unlimited Web Design Subscription | Sonibble',
   description:
     'Web design subscriptions for everyone and businesses. Unlimited request, no hidden fees and you won, we loved.',
   openGraph: {
     ...defaultOpenGraphMetadata,
-    title: 'Unlimited Web Design Agency | Sonibble',
+    title: 'Unlimited Web Design Subscription | Sonibble',
     description:
       'Web design subscriptions for everyone and businesses. Unlimited request, no hidden fees and you won, we loved.',
   },
   twitter: {
     ...defaultTwitterMetadata,
-    title: 'Unlimited Web Design Agency | Sonibble',
+    title: 'Unlimited Web Design Subscription | Sonibble',
     description:
       'Web design subscriptions for everyone and businesses. Unlimited request, no hidden fees and you won, we loved.',
   },
