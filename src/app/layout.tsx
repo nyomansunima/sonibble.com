@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { sansFont } from './fonts'
+import { montserratFont, sansFont } from './fonts'
 import { mainConfig } from '~/config/main-config'
-import Header from './header'
-import Footer from './footer'
+import AnimationProvider from './animation-provider'
 
 export const metadata: Metadata = {
   keywords: [
@@ -28,11 +27,9 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
       <body
-        className={`bg-background text-foreground font-normal text-base !leading-normal ${sansFont.className}`}
+        className={`bg-background text-foreground font-normal text-base !leading-normal ${sansFont.variable} ${montserratFont.variable} font-body`}
       >
-        <Header />
-        {children}
-        <Footer />
+        <AnimationProvider>{children}</AnimationProvider>
       </body>
     </html>
   )

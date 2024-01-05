@@ -1,41 +1,112 @@
-import Image from 'next/image'
+'use client'
+
+import * as React from 'react'
+import gsap from 'gsap'
 
 export default function ProcessSection() {
+  React.useEffect(() => {
+    const ctx = gsap.context(() => {
+      const triggers = document.querySelectorAll(
+        '[data-anim-scope=process-section] [data-anim-trigger]',
+      )
+      triggers.forEach((trigger) => {
+        gsap.from(trigger.querySelector('[data-anim-target]'), {
+          xPercent: '110',
+          opacity: 0.4,
+          ease: 'back',
+          duration: 1.4,
+          delay: 0.2,
+          scrollTrigger: {
+            trigger: trigger,
+            start: 'top 70%',
+          },
+        })
+
+        gsap.from(trigger.querySelector('[data-anim=headline]'), {
+          opacity: 0,
+          y: 400,
+          duration: 1.2,
+          scrollTrigger: {
+            trigger: trigger,
+            start: 'top 70%',
+          },
+        })
+      })
+    }, '[data-anim-scope=process-section]')
+
+    return () => {
+      ctx.revert()
+    }
+  }, [])
+
   return (
-    <section className="flex px-6">
-      <div className="flex bg-gradient-to-b from-[#FFFFFF] to-[#F5F0FF] rounded-3xl mx-auto py-48">
-        <div className="container mx-auto laptop:px-16 px-5">
-          <div className="flex gap-28">
-            <h2 className="text-7xl font-bold !leading-tight w-4/12">
-              Request, Create & Launch.
-            </h2>
-            <h5 className="text-3xl font-bold !leading-snug flex-1">
-              The easier way to create your own website, landing page,
-              e-commerce with the best team that handle everything for you. We
-              provide the best solutions for every business to stand out.
-              Subscribe then start working on your own projects.
-            </h5>
+    <section
+      className="flex bg-[#FAFBFF]"
+      data-anim-scope="process-section"
+      id="process"
+    >
+      <div className="container mx-auto laptop:px-16 px-5 laptop:py-80 py-20">
+        <div data-anim-trigger>
+          <h2
+            className="text-8xl !leading-tight font-bold font-heading w-8/12"
+            data-anim="headline"
+          >
+            Easy to start no shits.
+          </h2>
+        </div>
+
+        <div className="flex flex-col mt-56">
+          <div data-anim-trigger className="flex items-center px-16">
+            <div data-anim-target className="flex items-center py-16">
+              <span className="flex justify-center items-center text-4xl font-bold !leading-none h-16 w-16 rounded-full bg-white border-2 border-black">
+                1
+              </span>
+              <h3 className="text-7xl font-bold font-heading !leading-tight flex-1 ml-16">
+                Subscribe
+              </h3>
+              <p className="w-5/12 text-xl !leading-relaxed">
+                Subscribe to the plan, then you will get the access to your
+                portal including project manager, docs, and space.
+              </p>
+            </div>
           </div>
-          <div className="flex mt-52 gap-24 items-center">
-            <picture className="relative w-5/12 h-[651px] rounded-2xl overflow-hidden">
-              <Image
-                src={'/images/service-process.png'}
-                alt="Process how it works"
-                fill
-                className="object-cover"
-              />
-            </picture>
-            <ol className="flex flex-col gap-16 w-6/12 text-2xl font-bold !leading-snug list-decimal">
-              <li>
-                Subscribe to a plan & request as many web design as you'd like.
-              </li>
-              <li>
-                Receive your design within a few business days on average,
-                Monday to Friday.
-              </li>
-              <li>We'll revise the designs until you're 100% satisfied.</li>
-              <li>Launch your website to powering your business.</li>
-            </ol>
+          <div data-anim-trigger className="flex items-center px-16">
+            <div
+              data-anim-target
+              className="flex items-center py-16 border-y border-border pl-36 relative"
+            >
+              <span className="flex justify-center items-center text-4xl font-bold !leading-none h-16 w-16 rounded-full bg-black text-white border-2 border-black">
+                2
+              </span>
+              <div className="flex flex-col flex-1 ml-16">
+                <h3 className="text-7xl font-bold font-heading !leading-tight">
+                  Delivery
+                </h3>
+                <p className="w-10/12 text-xl !leading-relaxed mt-7">
+                  Receive your design within a few business days on average,
+                  Monday to Friday. We don’t doing wasting time meeting, all we
+                  do is working on your project.
+                </p>
+              </div>
+              <span className="absolute border-2 border-black text-3xl font-heading font-semibold py-3 px-8 rounded-full top-16 right-16 flex justify-end">
+                <span className="relative z-50"> 2 days</span>
+                <span className="rounded-full bg-[#ACFA17] h-[60px] w-[60px] absolute top-0 right-0"></span>
+              </span>
+            </div>
+          </div>
+          <div data-anim-trigger className="flex items-center px-16">
+            <div data-anim-target className="flex items-center py-16 relative">
+              <span className="flex justify-center items-center text-4xl font-bold !leading-none h-16 w-16 rounded-full bg-white border-2 border-black">
+                3
+              </span>
+              <h3 className="text-7xl font-bold font-heading !leading-tight flex-1 ml-16">
+                Revision
+              </h3>
+              <p className="w-5/12 text-xl !leading-relaxed">
+                We'll revise the designs until you're 100% satisfied. Then move
+                into the web development stage and make the site launch.
+              </p>
+            </div>
           </div>
         </div>
       </div>

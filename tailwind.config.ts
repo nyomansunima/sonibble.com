@@ -12,7 +12,12 @@ const config: Config = {
       laptop: '1024px',
       desktop: '1280px',
     },
+    fontFamily: {
+      heading: 'var(--font-heading)',
+      body: 'var(--font-body)',
+    },
     extend: {
+      black: '#03030F',
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
@@ -24,6 +29,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 }
 export default config
