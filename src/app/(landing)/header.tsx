@@ -78,12 +78,14 @@ export default function Header() {
       </nav>
 
       <div className="flex items-center" data-anim="actions">
-        {/* <Button asChild variant={'outline'} className="border-none">
-          <Link href={'/signin'}>Login</Link>
+        <Button asChild variant={'outline'} className="">
+          <Link
+            href={'https://sonibble.lemonsqueezy.com/billing'}
+            target="_blank"
+          >
+            Login
+          </Link>
         </Button>
-        <Button asChild variant={'primary'}>
-          <Link href={'/signup'}>Get Started</Link>
-        </Button> */}
       </div>
     </header>
   )
