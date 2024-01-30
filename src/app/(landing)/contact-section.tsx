@@ -49,7 +49,7 @@ export default function ContactSection() {
           <ul className="list-none flex flex-col gap-5">
             <li className="flex items-center gap-3 text-base font-medium">
               <i className="fi fi-sr-check bg-black rounded-full h-8 w-8 text-white text-sm" />
-              Unlimited Revision
+              Unlimited design revision
             </li>
             <li className="flex items-center gap-3 text-base font-medium">
               <i className="fi fi-sr-check bg-black rounded-full h-8 w-8 text-white text-sm" />
@@ -57,7 +57,7 @@ export default function ContactSection() {
             </li>
             <li className="flex items-center gap-3 text-base font-medium">
               <i className="fi fi-sr-check bg-black rounded-full h-8 w-8 text-white text-sm" />
-              Pause or Cancel anytime
+              Simple pricing
             </li>
           </ul>
 
@@ -68,7 +68,7 @@ export default function ContactSection() {
               className="bg-[#FFDFF9] text-foreground rounded-full px-16 py-11 text-xl transition-all duration-700 hover:scale-105"
             >
               <Link
-                href={'https://calendly.com/nyomansunima/sonibble-book-a-call'}
+                href={'https://calendar.app.google/Z2EvQAWa4ihp3SpW9'}
                 target="_blank"
               >
                 Book a call <i className="fi fi-sr-video-camera" />

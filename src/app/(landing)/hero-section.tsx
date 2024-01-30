@@ -66,7 +66,7 @@ export default function HeroSection() {
           className="text-8xl font-bold !leading-tight text-center font-heading"
           data-anim="headline"
         >
-          Your unlimited web design subscription.
+          Your unlimited web design services
         </h2>
         <p
           className="text-xl !leading-relaxed text-center w-7/12 mt-10"
@@ -78,17 +78,17 @@ export default function HeroSection() {
         <div className="flex items-center gap-10 mt-7" data-anim="features">
           <span className="flex items-center gap-3 text-base font-medium">
             <i className="fi fi-sr-check bg-black rounded-full h-8 w-8 text-white text-sm" />
-            Unlimited changes
+            Unlimited revision
           </span>
           <span className="flex items-center gap-3 text-base font-medium">
             <i className="fi fi-sr-check bg-black rounded-full h-8 w-8 text-white text-sm" />
-            Cancel anytime
+            Simple pricing
           </span>
         </div>
 
         {/* action button */}
         <div
-          className="flex items-center mt-28 justify-center gap-6"
+          className="flex items-center mt-28 justify-center gap-6 laptop:mb-40"
           data-anim="actions"
         >
           <Button
@@ -100,6 +100,7 @@ export default function HeroSection() {
                 ease: 'back',
               })
             }}
+            className="transition-all duration-700 hover:scale-95"
           >
             Get started
             <i className="fi fi-sr-paper-plane" />

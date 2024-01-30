@@ -13,12 +13,22 @@ const faqs: FAQ[] = [
   {
     question: "Why wouldn't I just hire a full-time designer?",
     answer:
-      "Good question! For starters, the annual cost of a full-time senior-level designer now exceeds $100,000, plus benefits (and good luck finding one available). Aside from that, you may not always have enough work to keep them busy at all times, so you're stuck paying for time you aren't able to utilize. With the monthly plan, you can pause and resume your subscription as often as you need to ensure you're only paying your designer when you have work available for them.",
+      "Good question! For starters, the annual cost of a full-time senior-level designer now exceeds $100,000, plus benefits (and good luck finding one available). Aside from that, you may not always have enough work to keep them busy at all times, so you're stuck paying for time you aren't able to utilize. With only simple site package and maintenance plan, you can get your world class site for your business.",
   },
   {
-    question: 'Is there a limit to how many requests I can have?',
+    question: 'How about meetings, contract, and proposal?',
     answer:
-      "Once subscribed, you're able to add as many design requests to your queue as you'd like, and they will be delivered one by one.",
+      'Sonibble just focus on deliver a great work, create a great site to support your business. We only accept the booking call to allow you know hwo sonibble works. We avoid contract, meetings, and proposal and focus on the result without wasting the time.',
+  },
+  {
+    question: 'How you will know about our business?',
+    answer:
+      "Because we don't doing meetings, you need to fill out the form that will ask about you, business and what sites do you really wants.",
+  },
+  {
+    question: 'How the revisions work?',
+    answer:
+      'On the design stage you can easily comment on the figma file. On development stage, you can easily give a feedback on sites by commenting some elements or contents. You can also add request on notion.',
   },
   {
     question: 'How fast will I receive my designs?',
@@ -26,9 +36,9 @@ const faqs: FAQ[] = [
       'On average, most requests are completed in just two days or less. However, more complex requests can take longer.',
   },
   {
-    question: 'How does the pause feature work?',
+    question: 'How fast will I receive my sites?',
     answer:
-      "We understand you may not have enough design work to fill up entire month. Perhaps you only have one or two design requests at the moment. That's where pausing your subscription comes in handy. Billing cycles are based on 31 day period. Let's say you sign up and use the service for 21 days, and then decide to pause your subscription. This means that the billing cycle will be paused and you'll have 10 days of service remaining to be used anytime in the future.",
+      'Most sites are completed in just 2 weeks or less. However the complexity, and features, pages can impact the time to deliver the sites.',
   },
   {
     question: 'How do I request designs?',
@@ -39,11 +49,6 @@ const faqs: FAQ[] = [
     question: "What if I don't like the design?",
     answer:
       "No worries! We'll continue to revise the design until you're 100% satisfied.",
-  },
-  {
-    question: 'What if I only have a single request?',
-    answer:
-      "That's fine. You can pause your subscription when finished and return  when you have additional design needs. There's no need to let the remainder of your subscription go to waste.",
   },
 ]
 
@@ -56,12 +61,12 @@ function FAQItem({ faq }: FAQItemProps) {
 
   return (
     <li
-      className="flex flex-col border-2 border-black px-6 py-5 rounded-2xl bg-white transition-all duration-300 hover:-translate-y-2"
+      className="flex flex-col border-2 border-black px-6 py-5 rounded-2xl bg-white transition-all duration-300 hover:-translate-y-2 cursor-pointer"
       onClick={() => {
         setOpen((state) => !state)
       }}
     >
-      <div className="flex items-center cursor-pointer">
+      <div className="flex items-center">
         <span className="text-lg font-medium flex flex-1">{faq.question}</span>
         <i className="fi fi-sr-plus text-base" />
       </div>

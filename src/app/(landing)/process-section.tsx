@@ -62,11 +62,12 @@ export default function ProcessSection() {
                 1
               </span>
               <h3 className="text-7xl font-bold font-heading !leading-tight flex-1 ml-16">
-                Subscribe
+                Buy & Subscribe
               </h3>
               <p className="w-5/12 text-xl !leading-relaxed">
-                Subscribe to the plan, then you will get the access to your
-                portal including project manager, docs, and space.
+                Buy the site packages, choose between Standard and remium site
+                package. Then subscribe for maintenance. You will get access to
+                form, docs, tasks manager, and collaboration.
               </p>
             </div>
           </div>
@@ -106,6 +107,26 @@ export default function ProcessSection() {
                 We'll revise the designs until you're 100% satisfied. Then move
                 into the web development stage and make the site launch.
               </p>
+            </div>
+          </div>
+          <div data-anim-trigger className="flex items-center px-16">
+            <div
+              data-anim-target
+              className="flex items-center py-16 border-y border-border pl-36 relative"
+            >
+              <span className="flex justify-center items-center text-4xl font-bold !leading-none h-16 w-16 rounded-full bg-black text-white border-2 border-black">
+                4
+              </span>
+              <div className="flex flex-col flex-1 ml-16">
+                <h3 className="text-7xl font-bold font-heading !leading-tight">
+                  Launch time
+                </h3>
+                <p className="w-10/12 text-xl !leading-relaxed mt-7">
+                  Launch your website after all request and match with your
+                  preferences and passed the quality control to support your
+                  business. This can take up to 2 weeks on effective days.
+                </p>
+              </div>
             </div>
           </div>
         </div>

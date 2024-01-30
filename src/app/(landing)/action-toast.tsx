@@ -90,7 +90,7 @@ export default function ActionToast() {
           className="transition-all duration-700 hover:scale-95"
         >
           <Link
-            href={'https://calendly.com/nyomansunima/sonibble-book-a-call'}
+            href={'https://calendar.app.google/Z2EvQAWa4ihp3SpW9'}
             target="_blank"
           >
             Book a call
