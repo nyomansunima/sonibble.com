@@ -3,6 +3,7 @@
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import * as React from 'react'
+import { isMobile } from '~/utils/helpers'
 
 interface FAQ {
   question: string
@@ -80,33 +81,35 @@ function FAQItem({ faq }: FAQItemProps) {
 
 export default function FAQSection() {
   React.useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap
-        .timeline({
-          paused: true,
-          scrollTrigger: {
-            trigger: '[data-anim=faq-section-trigger]',
-            start: 'top 40%',
-          },
-        })
-        .from(
-          [
-            '[data-anim=faq-section-trigger] [data-anim=headline]',
-            '[data-anim=faq-section-trigger] [data-anim=desc]',
-            '[data-anim=faq-section-trigger] [data-anim=list]',
-          ],
-          {
-            y: 400,
-            opacity: 0,
-            ease: 'back',
-            duration: 1.6,
-            stagger: 0.4,
-          },
-        )
-    }, '[data-anim=faq-section]')
+    if (!isMobile()) {
+      const ctx = gsap.context(() => {
+        gsap
+          .timeline({
+            paused: true,
+            scrollTrigger: {
+              trigger: '[data-anim=faq-section-trigger]',
+              start: 'top 40%',
+            },
+          })
+          .from(
+            [
+              '[data-anim=faq-section-trigger] [data-anim=headline]',
+              '[data-anim=faq-section-trigger] [data-anim=desc]',
+              '[data-anim=faq-section-trigger] [data-anim=list]',
+            ],
+            {
+              y: 400,
+              opacity: 0,
+              ease: 'back',
+              duration: 1.6,
+              stagger: 0.4,
+            },
+          )
+      }, '[data-anim=faq-section]')
 
-    return () => {
-      ctx.revert()
+      return () => {
+        ctx.revert()
+      }
     }
   }, [])
   return (
@@ -116,19 +119,19 @@ export default function FAQSection() {
         data-anim="faq-section-trigger"
       >
         <h2
-          className="text-8xl font-bold font-heading !leading-tight w-9/12 text-center"
+          className="text-5xl laptop:text-8xl font-bold font-heading !leading-tight laptop:w-9/12 text-center"
           data-anim="headline"
         >
           Need help?
         </h2>
         <p
-          className="text-xl !leading-relaxed text-center w-6/12 mt-10"
+          className="text-xl !leading-relaxed text-center laptop:w-6/12 mt-10"
           data-anim="desc"
         >
           Don't worry, we got you. Here are some answers for your questions.
         </p>
 
-        <div className="flex mt-36 w-8/12" data-anim="list">
+        <div className="flex mt-36 laptop:w-8/12" data-anim="list">
           <ul className="list-none flex flex-col gap-4 w-full">
             {faqs.map((item, i) => (
               <FAQItem faq={item} key={i} />

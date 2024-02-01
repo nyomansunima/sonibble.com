@@ -4,22 +4,25 @@ import * as React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import gsap from 'gsap'
+import { isMobile } from '~/utils/helpers'
 
 export default function GeneralHeader() {
   const headerRef = React.useRef<HTMLElement>(null)
 
   React.useEffect(function animateHeader() {
-    const ctx = gsap.context(() => {
-      gsap.from([headerRef.current!.querySelector('[data-anim=logo]')], {
-        y: '-40',
-        stagger: 0.2,
-        duration: 2.2,
-        ease: 'elastic',
-      })
-    }, '[data-anim-scope=header]')
+    if (!isMobile()) {
+      const ctx = gsap.context(() => {
+        gsap.from([headerRef.current!.querySelector('[data-anim=logo]')], {
+          y: '-40',
+          stagger: 0.2,
+          duration: 2.2,
+          ease: 'elastic',
+        })
+      }, '[data-anim-scope=header]')
 
-    return () => {
-      ctx.revert()
+      return () => {
+        ctx.revert()
+      }
     }
   })
 

@@ -46,10 +46,10 @@ export default function BenefitsSection() {
   return (
     <section className="flex" id="benefits">
       <div className="flex flex-col items-center container mx-auto laptop:px-20 px-5 laptop:py-80 py-20">
-        <h2 className="text-8xl font-bold font-heading !leading-tight text-center">
+        <h2 className="text-5xl laptop:text-8xl font-bold font-heading !leading-tight text-center">
           Real benefits for your business growth
         </h2>
-        <p className="text-xl !leading-relaxed text-center w-6/12 mt-10">
+        <p className="text-xl !leading-relaxed text-center laptop:w-6/12 mt-10">
           Perks so good you'll never need to go anywhere else for your web
           design. Seriously.
         </p>
@@ -69,7 +69,7 @@ export default function BenefitsSection() {
             <i className="fi fi-sr-network-cloud" />
           </Button>
         </div>
-        <div className="grid grid-cols-3 gap-x-6 gap-y-10 mt-36">
+        <div className="grid grid-cols-1 laptop:grid-cols-3 gap-x-6 gap-y-10 mt-20 laptop:mt-36">
           {benefits.map((item, i) => (
             <div
               className="flex flex-col border border-border rounded-2xl p-6"

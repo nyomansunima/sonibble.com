@@ -5,11 +5,11 @@ export default function PricingSection() {
   return (
     <section className="flex" id="pricing">
       <div className="flex flex-col container mx-auto laptop:px-20 px-5 laptop:py-80 py-20">
-        <h2 className="text-8xl font-bold font-heading !leading-tight w-9/12">
+        <h2 className="text-5xl laptop:text-8xl font-bold font-heading !leading-tight laptop:w-9/12">
           Simple pricing No hidden fees.
         </h2>
 
-        <div className="grid grid-cols-3 mt-36 gap-6">
+        <div className="grid grid-cols-1 laptop:grid-cols-3 mt-36 gap-6">
           <div className="flex flex-col gap-6">
             {/* Standard */}
             <div className="flex flex-col border border-border rounded-2xl p-6 relative">

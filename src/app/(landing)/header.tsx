@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '~/components/ui/button'
 import gsap from 'gsap'
+import { isMobile } from '~/utils/helpers'
 
 interface Menu {
   label: string
@@ -24,30 +25,32 @@ export default function Header() {
   const headerRef = React.useRef<HTMLElement>(null)
 
   React.useEffect(function animateHeader() {
-    const ctx = gsap.context(() => {
-      gsap.from(
-        [
-          headerRef.current!.querySelector('[data-anim=logo]'),
-          headerRef.current!.querySelector('[data-anim=nav]'),
-          headerRef.current!.querySelector('[data-anim=actions]'),
-        ],
-        {
-          y: '-40',
-          stagger: 0.2,
-          duration: 2.2,
-          ease: 'elastic',
-        },
-      )
-    }, '[data-anim-scope=header]')
+    if (!isMobile()) {
+      const ctx = gsap.context(() => {
+        gsap.from(
+          [
+            headerRef.current!.querySelector('[data-anim=logo]'),
+            headerRef.current!.querySelector('[data-anim=nav]'),
+            headerRef.current!.querySelector('[data-anim=actions]'),
+          ],
+          {
+            y: '-40',
+            stagger: 0.2,
+            duration: 2.2,
+            ease: 'elastic',
+          },
+        )
+      }, '[data-anim-scope=header]')
 
-    return () => {
-      ctx.revert()
+      return () => {
+        ctx.revert()
+      }
     }
   })
 
   return (
     <header
-      className="flex items-center w-full px-16 py-3 justify-between"
+      className="flex items-center w-full px-5 laptop:px-16 py-3 justify-between"
       ref={headerRef}
       data-anim-scope="header"
     >
@@ -61,7 +64,7 @@ export default function Header() {
         />
       </Link>
 
-      <nav className="flex items-center" data-anim="nav">
+      <nav className="hidden laptop:flex items-center" data-anim="nav">
         <ul className="list-none flex items-center gap-4 font-medium">
           {navMenus.map((menu, i) => (
             <li

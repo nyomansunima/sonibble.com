@@ -7,7 +7,7 @@ export default function Footer() {
 
   return (
     <footer className="flex flex-col border-t border-border">
-      <div className="flex px-16 py-9 font-medium justify-between">
+      <div className="flex flex-row px-5 laptop:px-16 py-9 font-medium justify-between">
         <div className="flex items-center">
           <span>Copyright &copy; {creditYear}</span>
         </div>

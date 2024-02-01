@@ -4,35 +4,38 @@ import SplitType from 'split-type'
 import { Button } from '~/components/ui/button'
 import * as React from 'react'
 import gsap from 'gsap'
+import { isMobile } from '~/utils/helpers'
 
 export default function HeroSection() {
   React.useEffect(() => {
-    const ctx = gsap.context(() => {
-      const headline = new SplitType(
-        '[data-anim-scope=hero-section] [data-anim=headline]',
-      )
-      gsap.from(headline.chars, {
-        y: '100',
-        opacity: 0,
-        stagger: 0.02,
-        ease: 'back',
-        duration: 1.5,
-      })
-      gsap.from(
-        ['[data-anim=desc]', '[data-anim=features]', '[data-anim=actions]'],
-        {
+    if (!isMobile()) {
+      const ctx = gsap.context(() => {
+        const headline = new SplitType(
+          '[data-anim-scope=hero-section] [data-anim=headline]',
+        )
+        gsap.from(headline.chars, {
           y: '100',
           opacity: 0,
+          stagger: 0.02,
           ease: 'back',
           duration: 1.5,
-          delay: 0.4,
-          stagger: 0.2,
-        },
-      )
-    }, '[data-anim-scope=hero-section]')
+        })
+        gsap.from(
+          ['[data-anim=desc]', '[data-anim=features]', '[data-anim=actions]'],
+          {
+            y: '100',
+            opacity: 0,
+            ease: 'back',
+            duration: 1.5,
+            delay: 0.4,
+            stagger: 0.2,
+          },
+        )
+      }, '[data-anim-scope=hero-section]')
 
-    return () => {
-      ctx.revert()
+      return () => {
+        ctx.revert()
+      }
     }
   }, [])
 
@@ -61,21 +64,24 @@ export default function HeroSection() {
       </svg>
 
       {/* headline and descriptions */}
-      <div className="container mx-auto laptop:px-20 px-5 flex flex-col items-center py-48 relative z-50">
+      <div className="container mx-auto laptop:px-20 px-5 flex flex-col laptop:items-center py-20 laptop:py-48 relative z-50">
         <h2
-          className="text-8xl font-bold !leading-tight text-center font-heading"
+          className="text-5xl laptop:text-8xl font-bold !leading-tight laptop:text-center font-heading"
           data-anim="headline"
         >
           Your unlimited web design services
         </h2>
         <p
-          className="text-xl !leading-relaxed text-center w-7/12 mt-10"
+          className="text-xl !leading-relaxed laptop:text-center laptop:w-7/12 mt-10"
           data-anim="desc"
         >
           Forget about employees, freelancers and agencies. You can have the
           best designs right now, right here.
         </p>
-        <div className="flex items-center gap-10 mt-7" data-anim="features">
+        <div
+          className="flex flex-col laptop:flex-row laptop:items-center gap-10 mt-7"
+          data-anim="features"
+        >
           <span className="flex items-center gap-3 text-base font-medium">
             <i className="fi fi-sr-check bg-black rounded-full h-8 w-8 text-white text-sm" />
             Unlimited revision

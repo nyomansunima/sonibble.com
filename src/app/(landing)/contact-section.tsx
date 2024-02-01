@@ -5,41 +5,44 @@ import * as React from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import Link from 'next/link'
+import { isMobile } from '~/utils/helpers'
 
 export default function ContactSection() {
   React.useEffect(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap
-        .timeline({ paused: true })
-        .from('[data-anim=contact-el-anim]', {
-          opacity: 0,
-          y: 400,
-          duration: 1.2,
-          ease: 'none',
+    if (!isMobile()) {
+      const ctx = gsap.context(() => {
+        const tl = gsap
+          .timeline({ paused: true })
+          .from('[data-anim=contact-el-anim]', {
+            opacity: 0,
+            y: 400,
+            duration: 1.2,
+            ease: 'none',
+          })
+
+        ScrollTrigger.create({
+          trigger: '[data-anim=contact-trigger-anim]',
+          start: 'top 70%',
+          onEnter: () => {
+            tl.play()
+          },
         })
-
-      ScrollTrigger.create({
-        trigger: '[data-anim=contact-trigger-anim]',
-        start: 'top 70%',
-        onEnter: () => {
-          tl.play()
-        },
       })
-    })
 
-    return () => {
-      ctx.revert()
+      return () => {
+        ctx.revert()
+      }
     }
   }, [])
 
   return (
     <section className="flex" id="contact" data-anim="contact-trigger-anim">
       <div
-        className="flex items-center container mx-auto laptop:px-20 px-5 laptop:py-80 py-20"
+        className="flex flex-col gap-10 laptop:gap-0 laptop:flex-row items-center container mx-auto laptop:px-20 px-5 laptop:py-80 py-20"
         data-anim="contact-el-anim"
       >
-        <div className="flex flex-col w-7/12">
-          <h2 className="text-8xl font-bold font-heading !leading-tight">
+        <div className="flex flex-col laptop:w-7/12">
+          <h2 className="text-5xl laptop:text-8xl font-bold font-heading !leading-tight">
             Don’t overthink it, just started.
           </h2>
         </div>

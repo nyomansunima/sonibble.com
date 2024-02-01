@@ -48,7 +48,7 @@ export default function ActionToast() {
 
   return (
     <div
-      className="flex fixed z-50 bg-[#FFDFF9] rounded-full p-4 border-[3px] border-black bottom-6 inset-x-[19%] translate-y-[120%]"
+      className="hidden laptop:flex fixed z-50 bg-[#FFDFF9] rounded-full p-4 border-[3px] border-black bottom-6 inset-x-[19%] translate-y-[120%]"
       data-anim="toast-el-anim"
     >
       <div className="flex items-center justify-center gap-6">
