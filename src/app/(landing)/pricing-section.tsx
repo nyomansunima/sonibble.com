@@ -20,7 +20,7 @@ export default function PricingSection() {
               <p className="mt-2">
                 Best for landing pages, starter, small business sites.
               </p>
-              <span className="text-4xl font-bold mt-8">$2,700</span>
+              <span className="text-4xl font-bold mt-8">$2,799</span>
               <p className="text-sm text-neutral-500 mt-1">Per site</p>
               <span className="text-base font-medium mt-7 border-t border-border pt-4">
                 What’s included
@@ -80,7 +80,7 @@ export default function PricingSection() {
                 business.
               </p>
 
-              <span className="text-4xl font-bold mt-8">$4,800</span>
+              <span className="text-4xl font-bold mt-8">$4,899</span>
               <p className="text-sm text-neutral-500 mt-1">Per site</p>
 
               <span className="text-base font-medium mt-7 border-t border-border pt-4">
